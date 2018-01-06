@@ -69,7 +69,7 @@ class MutableStream(object):
             if to_read == 0:
                 sleep(.01)
                 continue
-            result = self.wrapped_stream.read(to_read)
+            result = self.wrapped_stream.read(to_read, exception_on_overflow=False)
             frames.append(result)
             remaining -= to_read
 
